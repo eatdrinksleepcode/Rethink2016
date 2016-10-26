@@ -6,7 +6,6 @@ namespace Rethink
     public class PricingModule : NancyModule
     {
         private readonly Repository repository = new Repository();
-        private readonly PricingCalculator calculator = new PricingCalculator(ProductCatalog.Instance, new TaxCalculator());
 
         public PricingModule()
         {
@@ -25,7 +24,7 @@ namespace Rethink
             Get["/carts/{cartId:int}/pricing"] = parameters =>
             {
                 var cart = this.repository.LoadCart(parameters.cartId);
-                PricingSummary pricing = calculator.PriceCart(cart);
+                PricingSummary pricing = cart.PriceCart();
                 return Response.AsJson(pricing);
             };
         }

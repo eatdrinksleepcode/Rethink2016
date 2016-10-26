@@ -9,7 +9,7 @@ namespace Rethink
         public int NewCart()
         {
             var newId = ++nextCartId;
-            carts.Add(newId, new Cart());
+            carts.Add(newId, new Cart(ProductCatalog.Instance, new TaxCalculator()));
             return newId;
         }
 

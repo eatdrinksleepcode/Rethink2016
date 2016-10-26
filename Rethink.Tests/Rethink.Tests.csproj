@@ -53,7 +53,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PricingCalculatorTest.cs" />
+    <Compile Include="CartTest.cs" />
     <Compile Include="PricingModuleTest.cs" />
   </ItemGroup>
   <ItemGroup>
